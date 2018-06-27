@@ -117,9 +117,9 @@
     <header-file src="src/ios/headers/DDLegacyMacros.h" />
 
     <!-- Source files -->
-    <source-file src="src/ios/classes/AppDelegate+SalesforceHybridSDK.m" />
-    <source-file src="src/ios/classes/UIApplication+SalesforceHybridSDK.m" />
-    <source-file src="src/ios/classes/InitialViewController.m" />
+    <resource-file src="src/ios/classes/AppDelegate+SalesforceHybridSDK.m" />
+    <resource-file src="src/ios/classes/UIApplication+SalesforceHybridSDK.m" />
+    <resource-file src="src/ios/classes/InitialViewController.m" />
 
     <!-- Resource bundles -->
     <resource-file src="src/ios/resources/SalesforceSDKResources.bundle" />
@@ -127,13 +127,13 @@
     <resource-file src="src/ios/resources/SalesforceSDKAssets.xcassets" />
 
     <!-- Libraries -->
-    <source-file src="src/ios/frameworks/libSalesforceAnalytics.a" framework="true" />
-    <source-file src="src/ios/frameworks/libSalesforceSDKCore.a" framework="true" />
-    <source-file src="src/ios/frameworks/libSmartStore.a" framework="true" />
-    <source-file src="src/ios/frameworks/libSmartSync.a" framework="true" />
-    <source-file src="src/ios/frameworks/libSalesforceHybridSDK.a" framework="true" />
-    <source-file src="src/ios/frameworks/libsqlcipher.a" framework="true" />
-    <source-file src="src/ios/frameworks/libCocoaLumberjack.a" framework="true" />
+    <resource-file src="src/ios/frameworks/libSalesforceAnalytics.a" framework="true" />
+    <resource-file src="src/ios/frameworks/libSalesforceSDKCore.a" framework="true" />
+    <resource-file src="src/ios/frameworks/libSmartStore.a" framework="true" />
+    <resource-file src="src/ios/frameworks/libSmartSync.a" framework="true" />
+    <resource-file src="src/ios/frameworks/libSalesforceHybridSDK.a" framework="true" />
+    <resource-file src="src/ios/frameworks/libsqlcipher.a" framework="true" />
+    <resource-file src="src/ios/frameworks/libCocoaLumberjack.a" framework="true" />
 
     <!-- System frameworks -->
     <framework src="libxml2.tbd" />
@@ -159,6 +159,7 @@
     <!-- Fixes the activity tag in the Manifest -->
     <edit-config file="app/src/main/AndroidManifest.xml" target="/manifest/application/activity" mode="merge">
       <activity android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale"
+          android:name="com.salesforce.androidsdk.phonegap.ui.SalesforceDroidGapActivity"
           android:theme="@android:style/Theme.Black.NoTitleBar"
           android:launchMode="singleTop" />
     </edit-config>
@@ -166,7 +167,7 @@
     <!-- Fixes the application tag in the Manifest -->
     <edit-config file="app/src/main/AndroidManifest.xml" target="/manifest/application" mode="merge">
       <application android:hardwareAccelerated="true"
-          android:manageSpaceActivity="com.salesforce.androidsdk.ui.ManageSpaceActivity"
+          android:manageSpaceActivity="com.salesforce.androidsdk.ui.ManageSpaceActivity" />
     </edit-config>
 
     <!-- Fixes the min and target SDK versions in the Manifest -->
